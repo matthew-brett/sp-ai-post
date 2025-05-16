@@ -1,0 +1,108 @@
+---
+jupyter:
+  jupytext:
+    notebook_metadata_filter: all,-language_info
+    split_at_heading: true
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.16.6
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
+---
+
+# License for code pushes on Github 2020 - 2024
+
+
+See:
+
+* <https://github.blog/news-insights/policy-news-and-insights/racing-into-2025-with-new-github-innovation-graph-data/>
+* <https://github.com/github/innovationgraph/blob/main/docs/datasheet.md>
+
+```{python}
+import matplotlib.pyplot as plt
+import pandas as pd
+```
+
+```{python}
+df = pd.read_csv('https://raw.githubusercontent.com/github/innovationgraph/refs/heads/main/data/licenses.csv')
+df.T
+```
+
+```{python}
+df['year'].value_counts()
+```
+
+```{python}
+df.groupby('spdx_license')['num_pushers'].sum().sort_values(
+    ascending=False
+) / df['num_pushers'].sum() * 100
+```
+
+```{python}
+df['license_classification'] = df['spdx_license'].replace(
+    {'MIT': 'Attribution',
+     'GPL-3.0': 'Copyleft',
+     'Apache-2.0': 'Attribution',
+     'NOASSERTION': 'No license',
+     'BSD-3-Clause': 'Attribution',
+     'GPL-2.0': 'Copyleft',
+     'AGPL-3.0': 'Copyleft',
+     'Unlicense': '0',
+     'CC0-1.0': '0',
+     'MPL-2.0': 'Copyleft',
+     'BSD-2-Clause': 'Attribution',
+     'LGPL-3.0': 'Copyleft',
+     'CC-BY-4.0': 'Attribution',
+     'LGPL-2.1': 'Copyleft',
+     'ISC': 'Attribution',
+     'CC-BY-SA-4.0': 'Attribution',
+     '0BSD': '0',
+     'EPL-2.0': 'Copyleft',
+     'WTFPL': '0',
+     'BSL-1.0': 'Proprietary',
+     'Zlib': 'Attribution',
+     'EPL-1.0': 'Copyleft',
+     'MIT-0': '0',
+     'EUPL-1.2': 'Copyleft',
+     'BSD-3-Clause-Clear': 'Attribution',
+     'UPL-1.0': 'Attribution',
+     'Artistic-2.0': 'Attribution',
+     'MulanPSL-2.0': 'Attribution',
+     'OFL-1.1': 'Copyleft',
+     'OSL-3.0': 'Copyleft',
+    }
+)
+```
+
+```{python}
+df['license_classification'].value_counts()
+```
+
+```{python}
+(df.groupby('license_classification')['num_pushers'].sum().sort_values(
+    ascending=False
+) / df['num_pushers'].sum() * 100).round(2)
+```
+
+```{python}
+yq = pd.PeriodIndex.from_fields(year=df['year'],
+                                                quarter=df['quarter'])
+# df['datetime'] = df['year-quarter'].to_timestamp()
+df['datetime'] = yq.to_timestamp()
+```
+
+```{python}
+by_license = df.groupby(['license_classification'])
+```
+
+```{python}
+by_yq_pushers = df.groupby('datetime')['num_pushers'].sum()
+for label, rows in by_license:
+    by_dt = rows.groupby('datetime')['num_pushers'].sum() / by_yq_pushers
+    by_dt.plot(label=label)
+plt.legend()
+```
