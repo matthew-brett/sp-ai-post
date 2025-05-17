@@ -57,12 +57,12 @@ applying license restrictions to the result.
   economy. It gives the total count of unique developers making at least one
   git push to a repository with a given license."
 
-License type     Percent contributions
-------------     ---------------------
-Attribution      64.7
-Copyleft         18.7
-No license       13.9
-Public domain     2.7
+| License type  |  Percent contributions  |
+| ------------  |  ---------------------  |
+| Attribution   |  64.7                   |
+| Copyleft      |  18.7                   |
+| No license    |  13.9                   |
+| Public domain |   2.7                   |
 
 It is therefore reasonable to assert that very little of the training data for
 standard code LLMs is suitable for remixing without violating the terms of
