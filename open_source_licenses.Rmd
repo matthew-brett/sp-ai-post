@@ -33,17 +33,15 @@ df.T
 ```
 
 ```{python}
-df['year'].value_counts()
-```
-
-```{python}
-df.groupby('spdx_license')['num_pushers'].sum().sort_values(
+# % of unique license / person pushers by license.
+(df.groupby('spdx_license')['num_pushers'].sum().sort_values(
     ascending=False
-) / df['num_pushers'].sum() * 100
+) / df['num_pushers'].sum() * 100).round(2)
 ```
 
 ```{python}
-df['license_classification'] = df['spdx_license'].replace(
+# Classify licenses.
+df['License type'] = df['spdx_license'].replace(
     {'MIT': 'Attribution',
      'GPL-3.0': 'Copyleft',
      'Apache-2.0': 'Attribution',
@@ -51,8 +49,8 @@ df['license_classification'] = df['spdx_license'].replace(
      'BSD-3-Clause': 'Attribution',
      'GPL-2.0': 'Copyleft',
      'AGPL-3.0': 'Copyleft',
-     'Unlicense': '0',
-     'CC0-1.0': '0',
+     'Unlicense': 'Public domain',
+     'CC0-1.0': 'Public domain',
      'MPL-2.0': 'Copyleft',
      'BSD-2-Clause': 'Attribution',
      'LGPL-3.0': 'Copyleft',
@@ -60,13 +58,13 @@ df['license_classification'] = df['spdx_license'].replace(
      'LGPL-2.1': 'Copyleft',
      'ISC': 'Attribution',
      'CC-BY-SA-4.0': 'Attribution',
-     '0BSD': '0',
+     '0BSD': 'Public domain',
      'EPL-2.0': 'Copyleft',
-     'WTFPL': '0',
+     'WTFPL': 'Public domain',
      'BSL-1.0': 'Proprietary',
      'Zlib': 'Attribution',
      'EPL-1.0': 'Copyleft',
-     'MIT-0': '0',
+     'MIT-0': 'Public domain',
      'EUPL-1.2': 'Copyleft',
      'BSD-3-Clause-Clear': 'Attribution',
      'UPL-1.0': 'Attribution',
@@ -79,30 +77,43 @@ df['license_classification'] = df['spdx_license'].replace(
 ```
 
 ```{python}
-df['license_classification'].value_counts()
+df['License type'].value_counts()
 ```
 
 ```{python}
-(df.groupby('license_classification')['num_pushers'].sum().sort_values(
+# % license / persons by license.
+(df.groupby('License type')['num_pushers'].sum().sort_values(
     ascending=False
-) / df['num_pushers'].sum() * 100).round(2)
+) / df['num_pushers'].sum() * 100).round(1)
 ```
 
 ```{python}
-yq = pd.PeriodIndex.from_fields(year=df['year'],
-                                                quarter=df['quarter'])
-# df['datetime'] = df['year-quarter'].to_timestamp()
-df['datetime'] = yq.to_timestamp()
+# Make year and quarter into datetime.
+yq = pd.PeriodIndex.from_fields(year=df['year'], quarter=df['quarter'])
+df['Quarter'] = yq.to_timestamp()
 ```
 
 ```{python}
-by_license = df.groupby(['license_classification'])
+# Break down counts by quarter and license type.
+by_dt_license = (df.groupby(['Quarter', 'License type'])
+                 ['num_pushers']
+                 .sum())
+license_sums = (by_dt_license
+                .reset_index()
+                .pivot(index='Quarter',
+                       columns='License type',
+                       values='num_pushers')
+               )
+license_sums
 ```
 
 ```{python}
-by_yq_pushers = df.groupby('datetime')['num_pushers'].sum()
-for label, rows in by_license:
-    by_dt = rows.groupby('datetime')['num_pushers'].sum() / by_yq_pushers
-    by_dt.plot(label=label)
-plt.legend()
+license_sums.plot(title='License / person sums by quarter');
+```
+
+```{python}
+# % License / persons per quarter by license.
+license_pcts = license_sums.div(
+    license_sums.sum(axis='columns'), axis='index') * 100
+license_pcts.plot(title='License / person % by quarter');
 ```
