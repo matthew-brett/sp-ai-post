@@ -34,9 +34,10 @@ df.T
 
 ```{python}
 # % of unique license / person pushers by license.
+total_lps = df['num_pushers'].sum() 
 (df.groupby('spdx_license')['num_pushers'].sum().sort_values(
     ascending=False
-) / df['num_pushers'].sum() * 100).round(2)
+) / total_lps * 100).round(2)
 ```
 
 ```{python}
@@ -81,13 +82,6 @@ df['License type'].value_counts()
 ```
 
 ```{python}
-# % license / persons by license.
-(df.groupby('License type')['num_pushers'].sum().sort_values(
-    ascending=False
-) / df['num_pushers'].sum() * 100).round(1)
-```
-
-```{python}
 # Make year and quarter into datetime.
 yq = pd.PeriodIndex.from_fields(year=df['year'], quarter=df['quarter'])
 df['Quarter'] = yq.to_timestamp()
@@ -108,11 +102,16 @@ license_sums
 ```
 
 ```{python}
+#  License / person % by license type.
+(license_sums.sum() / total_lps * 100).round(2) 
+```
+
+```{python}
 license_sums.plot(title='License / person sums by quarter');
 ```
 
 ```{python}
-# % License / persons per quarter by license.
+# License / persons % per quarter by license.
 license_pcts = license_sums.div(
     license_sums.sum(axis='columns'), axis='index') * 100
 license_pcts.plot(title='License / person % by quarter');
