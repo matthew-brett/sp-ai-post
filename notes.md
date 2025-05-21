@@ -55,7 +55,7 @@ the copyright or license of the code from which the generated code is derived.
 This makes it impossible for you, the user of AI code, to honor the licenses
 and copyrights of the code from which the generated code derives.
 
-## Upholding copyright before AI
+## Upholding copyright before and after AI
 
 Copyright has long been a concern in open-source coding.  One common problem is
 avoiding the use of code with [Copyleft
@@ -71,13 +71,13 @@ any possible influence of the code with an incompatible license.
 
 This "clean room" principle applies to the use of AI-generated code.  As we
 will see, standard AI models have "read" a huge body of code that requires
-attribution, for most commercial models, is likely to have "read" Copyleft
-code, with stricter requirements.  It is therefore not possible to assert with
-any certainty that the generated code does not contain similar or identical
-parts of code to which the original author's license will apply, and for which
-you must apply their license terms.
+attribution.  Most commercial models (see below) are likely to have "read"
+Copyleft code, that imposes stricter requirements.  It is therefore not
+possible to assert with any certainty that the generated code does not contain
+similar or identical code fragments to which the original author's license will
+apply.
 
-## AI training sets and copyright
+## Copyright in AI training sets
 
 Tools like Github Copilot, [Cursor](https://www.cursor.com) and
 [StarCoder](https://huggingface.co/blog/starcoder) use Large Language Models
