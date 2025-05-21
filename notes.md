@@ -11,36 +11,37 @@ participants.
 
 ## A straightforward case
 
-Let us say that I write a code file — call this `my_code.py` — to which
-I attach a license that has only one clause (simplified from the BSD license):
+Let us say that we write a code file — call this `our_code.py` — to which
+we attach a license that has only one clause (simplified from the BSD license):
 
-> Copyright Matthew Brett
+> Copyright Paul Ivanov, Matthew Brett
 >
 > 1. Redistributions of source or binary forms must retain the above copyright notice.
 
-Now let us say that you take `mycode.py`, copy it into your own project, and
+Now let us say that you take `our_code.py`, copy it into your own project, and
 claim this as your copyright.
 
-This would be a straightforward breach of copyright.  If I was so inclined,
-I might take legal action, but even if I was not so inclined, you have abused
-my generosity in removing my copyright.  I suspect that all open-source coders
-would accept that this was wrong, and that we should do all we reasonably could
-to make sure we are not doing that ourselves.
+This would be a straightforward breach of copyright.  If we were so inclined,
+we might take legal action, but even if we were not so inclined, you have abused
+our generosity in your act of removing our copyright and claiming it as your
+own.  We suspect that all open-source coders would accept that this was wrong,
+and that we should do all we reasonably could to make sure we are not doing
+that ourselves.
 
 The situation does not change in any important way if you find and use some
-software to remove my license before claiming your own copyright.
+software to remove our license before claiming your own copyright.
 
 Now let us say that two colleagues have written code files for a similar
 purpose.  Call these `joes_code.py` and `janes_code.py`.  Each has their own
 license, identical to mine, but noting their own copyright — "Copyright Joe
-Blogs" and "Copyright Jane Doe".
+Bloggs" and "Copyright Jane Doe".
 
-Your software takes these three code files (`mycode.py`, `joes_code.py` and
+Your software takes these three code files (`our_code.py`, `joes_code.py` and
 `janes_code.py`) and uses an algorithm to fuse them together into one file:
 `merged_code.py`.  It pulls off all three licenses and hands the code to you.
 You claim copyright of the result.
 
-In these simple cases, I continue to assert that most open-source coders would
+In these simple cases, we continue to assert that most open-source coders would
 see this as abuse of their copyright.
 
 The last situation is a simplification of the process by which AI generates
