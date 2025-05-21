@@ -1,15 +1,78 @@
 # Background and rationale for AI guidelines
 
-## Glossary
+## A straightforward case
 
-* LLM — large language model.
+Let us say that I write a code file, call this `my_code.py`, to which I attach
+a license that has only one clause (simplified from the BSD license):
 
-## Copyright
+> Copyright Matthew Brett
+>
+> 1. Redistributions of source or binary forms must retain the above copyright notice.
+
+Now let us say that you take `mycode.py`, copy it into your own project, and
+claim this as your copyright.
+
+This would be a straightforward breach of copyright.  If I was so inclined,
+I might take legal action, but even if I was not so inclined, you have abused
+my generosity in taking my copyright.  I suspect that all open-source coders
+would accept that this was wrong, and that we should do all that we can make
+sure we are not doing that ourselves.
+
+The situation does not change in any important way if you find and use some
+software to remove my license before claiming your own copyright.
+
+Now let us say that two colleagues have written code files for a similar
+purpose.  Call these `joes_code.py` and `janes_code.py`.  Each has their own
+license, identical to mine, but noting their own copyright — "Copyright Joe
+Blogs" and "Copyright Jane Doe".
+
+Your software takes these three code files (`mycode.py`, `joes_code.py` and
+`janes_code.py`) and uses an algorithm to fuse them together into one file
+`merged_code.py`.  It pulls off all three licenses and hands the code to you.
+You claim copyright of the result.
+
+In these simple cases, I continue to assert that most open-source coders would
+see this as abuse of their copyright.
+
+The last situation is a simplification of the process by which AI generates
+code, with one important difference.  In the simplified case above, the
+license-stripping software could tell you the set of licenses that could or
+should apply to the output.  In general, AI-generated code results from
+training on a massive body of code, all with different copyright, and very
+little of which allows for re-use without attribution (see below).  Therefore
+standard AI does not, and cannot, tell you the license of the code from with
+the generated code is derived.  This makes it impossible for you, the user of
+AI code, to honor the licenses of the code from which the generated code
+derives.
+
+## Upholding copyright before AI
+
+Copyright has long been a concern in open-source coding.  One common problem is
+avoiding the use of code with [Copyleft
+licenses](https://en.wikipedia.org/wiki/Copyleft) (such as the GNU General
+Public License (GPL), in projects with less-restrictive licenses, such as BSD
+or MIT.
+
+In order to avoid leak of copyright, one must use "clean room" methods; that
+is, the person writing the BSD code *cannot read* the GPL code, because, if you
+do read the GPL code, it will be very difficult to avoid the unconscious use of
+the GPL implementation.  The BSD author must therefore keep themselves clean of
+any possible influence of the code with an incompatible license.
+
+This "clean room" principle applies to the use of AI-generated code.  As we
+will see, standard AI models have "read" a huge body of code that requires
+attribution, for most commercial models, is likely to have "read" Copyleft
+code, with stricter requirements.  It is therefore not possible to assert with
+any certainty that the generated code does not contain similar or identical
+parts of code to which the original author's license will apply, and for which
+you must apply their license terms.
+
+## AI training sets and copyright
 
 Tools like Github Copilot, [Cursor](https://www.cursor.com) and
-[StarCoder](https://huggingface.co/blog/starcoder) use LLMs trained on huge
-bodies of code. Call these Code LLMs.  In the case of Github Copilot
-specifically:
+[StarCoder](https://huggingface.co/blog/starcoder) use Large Language Models
+(LLMs) trained on huge bodies of code. Call these Code LLMs.  In the case of
+Github Copilot specifically:
 
 > GitHub Copilot’s AI model was trained with the use of code from GitHub’s
 public repositories
@@ -42,9 +105,9 @@ reference to "publicly available data on the internet", it is reasonable to
 assume that Claude and GPT-4 do use public Github repositories, at least, as
 training data.  An analysis of [Github
 statistics](https://github.blog/news-insights/policy-news-and-insights/racing-into-2025-with-new-github-innovation-graph-data)
-shows that most contributors (as measured by number of people pushing code [^on-pushes])
-push code covered by attribution type licenses (such as BSD), with
-a significant minority being Copyleft (such as GPL), and a tiny proportion
+shows that most contributors (as measured by number of people pushing code
+[^on-pushes]) push code covered by attribution type licenses (such as BSD),
+with a significant minority being Copyleft (such as GPL), and a tiny proportion
 being public-domain.  Only public-domain licenses allow use of the code without
 applying license restrictions to the result.
 
@@ -68,7 +131,52 @@ It is therefore reasonable to assert that very little of the training data for
 standard code LLMs is suitable for remixing without violating the terms of
 their respective licenses.
 
-## Variations in models
+## A proposed response
+
+As we would not allow code contributions that consist, in part, of code with
+unacknowledged copyright, we should not accept code generated by AI.
+
+We suggest that projects note this on their contribution pages and on their
+pull-request templates, perhaps using something like:
+
+> Code generated by AI from (for example) Github Copilot or Cursor, derives
+from code with a wide variety of copyright terms, but, because of the nature of
+the generation process, cannot tell you which of these terms might apply to the
+AI output.  Therefore, as we cannot accept code that you have copied from
+a project under another person's copyright, we cannot accept AI-generated code.
+Please use the tick boxes below to confirm that you have turned off all AI code
+generation in your editor, before writing your contribution, and that you have
+not read any AI-generated code in the process of writing your submission.
+
+## Distinction between legal and moral obligation
+
+Previous discussions have revealed that there can be some confusion between
+legal liability and a proper desire to honor the original license of code that
+the AI uses for generation.
+
+It is unlikely that any one particular use of AI will cause the original author
+to pursue a copyright claim.  This is true for straightforward license abuse,
+as it is for use of AI.  The author may not detect the abuse, because they are
+not reading your code, or they may choose not to pursue the abuse, if they have
+more productive ways to spend their time.  Nevertheless, the abuse has
+occurred.  As we would not want our copyright abused, we should be careful to
+avoid abusing the copyright of others, even if this would be unlikely to cause
+us specific harm in terms of legal action, or the requirement to pull out the
+offending code at some later date.
+
+## Enforcement
+
+Enforcement is important to the degree that we believe that honor-based
+methods, such as the proposed affirmation above, will not be effective.  If we
+believe these will be effective, at least in part, then it is difficult for us
+to see why we would worry that formal enforcement would be difficult, or even
+impractical.  We have still achieved at least part of our aim to reduce
+copyright abuse of open-source code.
+
+## Use-cases
+
+There have been several interesting proposals for edge-cases in which the use
+of AI may be acceptable.
 
 
 ## References
