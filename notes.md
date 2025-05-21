@@ -23,10 +23,10 @@ claim this as your copyright.
 
 This would be a straightforward breach of copyright.  If we were so inclined,
 we might take legal action, but even if we were not so inclined, you have abused
-our generosity in your act of removing our copyright and claiming it as your
-own.  We suspect that all open-source coders would accept that this was wrong,
-and that we should do all we reasonably could to make sure we are not doing
-that ourselves.
+our generosity in your act of removing our copyright and claiming our work as
+your own.  We suspect that all open-source coders would accept that this was
+wrong, and that we should do all we reasonably could to make sure we are not
+doing that ourselves.
 
 The situation does not change in any important way if you find and use some
 software to remove our license before claiming your own copyright.
