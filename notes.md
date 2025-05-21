@@ -202,10 +202,9 @@ Understandably enough, Microsoft concentrates on the problem of legal liability 
 
 Enforcement is important to the degree that we believe that honor-based
 methods, such as the proposed affirmation above, will not be effective.  If we
-believe these will be effective, at least in part, then it is difficult for us
-to see why we would worry that formal enforcement would be difficult, or even
-impractical.  We have still achieved at least part of our aim to reduce
-copyright abuse of open-source code.
+believe these will be effective, at least in part, then we will be less concerned
+that formal enforcement would be difficult.  We have still achieved our aim to
+reduce copyright abuse of open-source code.
 
 ## Use-cases
 
