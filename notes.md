@@ -218,7 +218,7 @@ was using AI to port code with a known license — say BSD — to another langua
 applying it to the port?
 
 We think the answer is no.   Applying the "clean room" principle above, we know
-that standard AI LLMs have "read" a huge corpus of code with attribution or
+that standard code LLMs have "read" a huge corpus of code with attribution or
 even Copyleft licenses.  In asking the AI to port the original MATLAB code, we
 cannot know the extent to which the AI has used other training code in the port.
 For example, perhaps there is also a GPL implementation of this algorithm in
@@ -227,7 +227,10 @@ the port.
 
 One typical use of AI is to generate suggestions for possible code, and then
 use that as the basis for writing one's own version of the same code.  On the
-"clean room" principle, this also runs the risk of license leak.  We should
+"clean room" principle, this also runs the risk of license leak, because the
+contents of the AI suggestion has an unknowable set of applicable copyright,
+and, as for ports of e.g. GPL code, it is difficult for you to see whether your
+re-implementation has used ideas and code from the AI suggestion.  We should
 also require our contributors to forgo this use (see the suggested wording
 above).
 
@@ -235,7 +238,8 @@ There are situations in which AI may suggest changes, such as bug-fixes, that
 are so small as to be trivial (say, a few characters) and so obvious as to be
 the only practical change to achieve the desired result.  In this case it's
 difficult to imagine the generated code will be practically subject to
-a license from the training set.
+a license from the training set, any more than the same bug-fix would be
+subject to the license of any original code with the same fix.
 
 ## References
 
