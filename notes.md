@@ -114,7 +114,9 @@ It is similarly unclear for [GPT-4](https://arxiv.org/abs/2303.08774).
 However, given Claude and GPT-4's abilities for code generation, and their
 reference to "publicly available data on the internet", it is reasonable to
 assume that Claude and GPT-4 do use public Github repositories, at least, as
-training data.  An analysis of [Github
+training data.  Table 1 contains [our
+analysis](https://github.com/matthew-brett/sp-ai-post/blob/main/open_source_licenses.ipynb)
+of [Github
 statistics](https://github.blog/news-insights/policy-news-and-insights/racing-into-2025-with-new-github-innovation-graph-data)
 shows that most contributors (as measured by number of people pushing code
 [^on-pushes]) push code covered by attribution type licenses (such as BSD),
@@ -130,6 +132,8 @@ applying license restrictions to the result.
   "The licenses metric represents the most popular software licenses in a given
   economy. It gives the total count of unique developers making at least one
   git push to a repository with a given license."
+
+  ### Table 1. GitHub contributors broken down by license type
 
 | License type  |  Percent contributions  |
 | ------------  |  ---------------------  |
