@@ -2,8 +2,8 @@
 
 ## A straightforward case
 
-Let us say that I write a code file, call this `my_code.py`, to which I attach
-a license that has only one clause (simplified from the BSD license):
+Let us say that I write a code file — call this `my_code.py` — to which
+I attach a license that has only one clause (simplified from the BSD license):
 
 > Copyright Matthew Brett
 >
@@ -14,9 +14,9 @@ claim this as your copyright.
 
 This would be a straightforward breach of copyright.  If I was so inclined,
 I might take legal action, but even if I was not so inclined, you have abused
-my generosity in taking my copyright.  I suspect that all open-source coders
-would accept that this was wrong, and that we should do all that we can make
-sure we are not doing that ourselves.
+my generosity in removing my copyright.  I suspect that all open-source coders
+would accept that this was wrong, and that we should do all we reasonably could
+to make sure we are not doing that ourselves.
 
 The situation does not change in any important way if you find and use some
 software to remove my license before claiming your own copyright.
@@ -38,12 +38,12 @@ The last situation is a simplification of the process by which AI generates
 code, with one important difference.  In the simplified case above, the
 license-stripping software could tell you the set of licenses that could or
 should apply to the output.  In general, AI-generated code results from
-training on a massive body of code, all with different copyright, and very
-little of which allows for re-use without attribution (see below).  Therefore
-standard AI does not, and cannot, tell you the license of the code from with
-the generated code is derived.  This makes it impossible for you, the user of
-AI code, to honor the licenses of the code from which the generated code
-derives.
+training on a massive body of code, with a huge number of different copyright
+holders. A small proportion of the training code allows for re-use without
+attribution (see below).  Therefore standard AI does not, and cannot, tell you
+the copyright or license of the code from which the generated code is derived.
+This makes it impossible for you, the user of AI code, to honor the licenses
+and copyrights of the code from which the generated code derives.
 
 ## Upholding copyright before AI
 
@@ -178,6 +178,19 @@ copyright abuse of open-source code.
 There have been several interesting proposals for edge-cases in which the use
 of AI may be acceptable.
 
+One [from Matt
+Haberland](https://github.com/scientific-python/summit-2025/issues/35#issuecomment-2874656680)
+was using AI to port code with a known license — say BSD — to another language
+— say from MATLAB to Python.  Can one then honor the original license by
+applying it the port?
+
+We think the answer is no.   Applying the "clean room" principle above, we know
+that standard AI LLMs have "read" a huge corpus of code with attribution or
+even Copyleft licenses.  In asking the AI to port the original MATLAB code, we
+cannot know the extend to which the AI as used other training code in the port.
+For example, perhaps there is also a GPL implementation of this algorithm in
+Python.  There is no barrier that we know of to prevent the AI porting process
+from deploying the GPL code in the port.
 
 ## References
 
