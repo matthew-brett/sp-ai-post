@@ -93,8 +93,9 @@ source](https://copilot.github.trust.page/faq#ip-and-open-source).
 Starcoder is a set of models trained on data described at
 [BigCode](https://www.bigcode-project.org).  BigCode is a research project to
 develop a code LLM that a) uses code with an identified and "permissive"
-license (such as MIT) and b) is itself developed with open code.  See
-[https://huggingface.co/datasets/bigcode/the-stack#dataset-card-for-the-stack].
+license (such as MIT) and b) is itself developed with open code.  See the
+[BigCode dataset card](
+https://huggingface.co/datasets/bigcode/the-stack#dataset-card-for-the-stack).
 
 [Cursor defers to Claude and
 GPT-4](https://forum.cursor.com/t/important-does-cursor-generate-copyrighted-code/74447).
