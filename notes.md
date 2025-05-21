@@ -237,7 +237,7 @@ above).
 There are situations in which AI may suggest changes, such as bug-fixes, that
 are so small as to be trivial (say, a few characters) and so obvious as to be
 the only practical change to achieve the desired result.  In this case it's
-difficult to imagine the generated code will be practically subject to
+difficult to imagine the generated code could reasonably be subject to
 a license from the training set, any more than the same bug-fix would be
 subject to the license of any original code with the same fix.
 
