@@ -1,5 +1,14 @@
 # Background and rationale for AI guidelines
 
+## Main authors
+
+* Paul Ivanov
+* Matthew Brett
+
+after a long an fruitful discussion at the [Scientific Python Developer Summit
+2025](https://scientific-python.org/summits/developer/2025), with thanks to all
+participants.
+
 ## A straightforward case
 
 Let us say that I write a code file — call this `my_code.py` — to which
@@ -27,7 +36,7 @@ license, identical to mine, but noting their own copyright — "Copyright Joe
 Blogs" and "Copyright Jane Doe".
 
 Your software takes these three code files (`mycode.py`, `joes_code.py` and
-`janes_code.py`) and uses an algorithm to fuse them together into one file
+`janes_code.py`) and uses an algorithm to fuse them together into one file:
 `merged_code.py`.  It pulls off all three licenses and hands the code to you.
 You claim copyright of the result.
 
@@ -131,6 +140,16 @@ It is therefore reasonable to assert that very little of the training data for
 standard code LLMs is suitable for remixing without violating the terms of
 their respective licenses.
 
+See [Copilot's FAQ](https://github.com/features/copilot#faq) (under
+"Responsible AI"), for Copilot's analysis of copyright infringement, at some threshold of detection. Specifically, it has:
+
+> What about copyright risk in suggestions? In rare instances (less than 1%
+based on GitHub’s research), suggestions from GitHub may match examples of code
+used to train GitHub’s AI model.
+
+It's difficult to know what "match examples" means, but nevertheless, 1% is
+still too high a risk of license breach.
+
 ## A proposed response
 
 As we would not allow code contributions that consist, in part, of code with
@@ -154,6 +173,13 @@ Previous discussions have revealed that there can be some confusion between
 legal liability and a proper desire to honor the original license of code that
 the AI uses for generation.
 
+Put simply, this is the distinction between these two questions:
+
+* "Will I be held liable for copyright infringement?" (the legal question
+  / risk) and
+* "Am I respecting the author's stated intentions for re-using this code?" (a
+  moral or ethical question).
+
 It is unlikely that any one particular use of AI will cause the original author
 to pursue a copyright claim.  This is true for straightforward license abuse,
 as it is for use of AI.  The author may not detect the abuse, because they are
@@ -163,6 +189,12 @@ occurred.  As we would not want our copyright abused, we should be careful to
 avoid abusing the copyright of others, even if this would be unlikely to cause
 us specific harm in terms of legal action, or the requirement to pull out the
 offending code at some later date.
+
+Understandably enough, Microsoft concentrates on the problem of legal liability in its Copilot Copyright Commitment.[^microsoft-legal]
+
+[^nicrosoft-legal]: Microsoft partially indemnifies some of its customers
+  against copyright infringement with AI - for example [see this
+  announcement](https://blogs.microsoft.com/on-the-issues/2023/09/07/copilot-copyright-commitment-ai-legal-concerns)
 
 ## Enforcement
 
@@ -192,63 +224,18 @@ For example, perhaps there is also a GPL implementation of this algorithm in
 Python.  There is no barrier that we know of to prevent the AI porting process
 from deploying the GPL code in the port.
 
+One typical use of AI is to generate suggestions for possible code, and then
+using that as the basis for writing one's own version of the same code.  On the
+"clean room" principle, this runs the risk of license leak.  We should also
+require our contributors to forgo this use (see the suggested wording above).
+
+There are situations in which AI may suggest changes, such as bug-fixes, that
+are so small as to be trivial (say, a few characters) and so obvious as to be
+the only practical change to achieve the desired result.  In this case it's
+difficult to imagine the generated code will be practically subject to
+a license from the training set.
+
 ## References
 
-* [Github innovation graph license file](https://github.com/github/innovationgraph/blob/3c4fee675980239ea5b17e1329f9945eab4202e4/data/licenses.csv)
-
-## Note in Caffe Milano
-
-* Copilot's own IP description is in their [FAQ](https://github.com/features/copilot#faq) under "Responsible AI".   Specifically, it has:
-
-  > What about copyright risk in suggestions? In rare instances (less than 1%
-  based on GitHub’s research), suggestions from GitHub may match examples of
-  code used to train GitHub’s AI model.
-
-* In fact, Microsoft partially indemnifies some of its customers against
-  copyright infringement with AI - for example [see this
-  announcement](https://blogs.microsoft.com/on-the-issues/2023/09/07/copilot-copyright-commitment-ai-legal-concerns)
-
-* We need to draw a distinction between:
-
-  * "Will I be held liable for copyright infringement?" (the legal question
-    / risk) and
-  * "Am I respecting the author's stated intentions for re-using this code?"
-    (ethical question).
-
-* Describe the standard practice when dealing with code with incompatible
-  license such as GPL.  "Clean room".
-* We should consider AI code as code with an unknown license.  In particular,
-  the code will (see analysis above) nearly invariably come (via the training
-  data) from code that would, if used in your own project, apply further
-  licensing constraints, such as attribution.
-* Therefore we should employ a "clean room" approach to AI-generated code.
-* It is therefore not acceptable to copy-paste AI-generated code into your own
-  project (or pull-requests to another project that is publicly available).
-* One typical use of AI is to generate suggestions for possible code, and then
-  using that as the basis for writing one's own version of the same code.  On
-  the "clean room" principle, this runs the risk of license leak, and we should
-  not allow such use.
-* Obviously - if one is not publishing or distributing the output from AI, one
-  is not subject to generally subject to license terms.  You've always been
-  able to take GPL code and do what you want with it, as long as you don't
-  allow anyone else to use that code.
-* There are situations in which AI may suggest changes, such as bug-fixes, that
-  are so small as to be trivial (say, a few characters) and so obvious as to be
-  the only practical change to achieve the desired result.  In this case it's
-  difficult to imagine the generated code will be practically subject to
-  a license from the training set.
-* One use-case for AI that may have reduced license concern is translation of
-  code written in one language to another, where there is a clear license for
-  the original code for which one could meet the terms.  For example, imagine
-  MATLAB code with an MIT license, translated by AI to Python.  One could give
-  suitable attribution to the original author, conforming to the original
-  license.  However, there is no way to be sure that the process of translation
-  has not used training from code with other licenses.  Such code may be
-  subject to those other licenses, but of course, the user would not be aware
-  that was the case.  So we believe this case, though at the edge, is not safe
-  in terms of respecting copyright.
-
-## By
-
-* Paul Ivanov
-* Matthew Brett
+* [Github innovation graph license
+  file](https://github.com/github/innovationgraph/blob/3c4fee675980239ea5b17e1329f9945eab4202e4/data/licenses.csv)
