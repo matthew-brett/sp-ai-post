@@ -215,20 +215,21 @@ One [from Matt
 Haberland](https://github.com/scientific-python/summit-2025/issues/35#issuecomment-2874656680)
 was using AI to port code with a known license — say BSD — to another language
 — say from MATLAB to Python.  Can one then honor the original license by
-applying it the port?
+applying it to the port?
 
 We think the answer is no.   Applying the "clean room" principle above, we know
 that standard AI LLMs have "read" a huge corpus of code with attribution or
 even Copyleft licenses.  In asking the AI to port the original MATLAB code, we
-cannot know the extend to which the AI as used other training code in the port.
+cannot know the extent to which the AI has used other training code in the port.
 For example, perhaps there is also a GPL implementation of this algorithm in
-Python.  There is no barrier that we know of to prevent the AI porting process
-from deploying the GPL code in the port.
+Python.  The AI porting process may use and incorporate part of the GPL code in
+the port.
 
 One typical use of AI is to generate suggestions for possible code, and then
-using that as the basis for writing one's own version of the same code.  On the
-"clean room" principle, this runs the risk of license leak.  We should also
-require our contributors to forgo this use (see the suggested wording above).
+use that as the basis for writing one's own version of the same code.  On the
+"clean room" principle, this also runs the risk of license leak.  We should
+also require our contributors to forgo this use (see the suggested wording
+above).
 
 There are situations in which AI may suggest changes, such as bug-fixes, that
 are so small as to be trivial (say, a few characters) and so obvious as to be
