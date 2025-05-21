@@ -212,8 +212,8 @@ reduce copyright abuse of open-source code.
 
 ## Use-cases
 
-There have been several interesting proposals for edge-cases in which the use
-of AI may be acceptable.
+There have been several interesting edge-cases proposed that help to delineate
+between acceptable and unacceptable uses of AI.
 
 One [from Matt
 Haberland](https://github.com/scientific-python/summit-2025/issues/35#issuecomment-2874656680)
