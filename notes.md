@@ -244,11 +244,11 @@ Another typical use of AI is to generate suggestions for possible code, and then
 use that as the basis for writing one's own version of the same code.  From the
 "clean room" principle, this also runs the risk of license leak, because the
 contents of the AI suggestion has an unknowable set of applicable copyright.
-As with our example of not looking at GPL code while contributing with a
-permissive license, it is difficult for you to see whether your
-re-implementation has used ideas and code from the AI suggestion.  We
-should also require our contributors to forgo this use (see the suggested
-wording above).
+As with our example of not looking at GPL code while contributing to a project
+with a more permissive license, it is difficult for you to see whether your
+re-implementation has used ideas and code from the AI suggestion.  We should
+also require our contributors to forgo this use (see the suggested wording
+above).
 
 There are situations in which AI may suggest changes, such as bug-fixes, that
 are so small as to be trivial (say, a few characters) and so obvious as to be
