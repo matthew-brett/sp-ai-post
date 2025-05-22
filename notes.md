@@ -5,9 +5,11 @@
 * Paul Ivanov
 * Matthew Brett
 
-after a long an fruitful discussion at the [Scientific Python Developer Summit
+after a long and fruitful discussion at the [Scientific Python Developer Summit
 2025](https://scientific-python.org/summits/developer/2025), with thanks to all
-participants.
+participants.  See [the AI policy
+issue](https://github.com/scientific-python/summit-2025/issues/35) for some
+summaries and debate after the discussion.
 
 ## A straightforward case
 
@@ -173,6 +175,11 @@ Please use the tick boxes below to confirm that you have turned off all AI code
 generation in your editor, before writing your contribution, and that you have
 not read any AI-generated code in the process of writing your submission.
 
+If we do detect or suspect AI use in the submission, we do the same as we would
+if we suspected e.g. Copyleft code use in a project with an
+attribution-license.  That is, we check with the contributor, and if we are not
+satisfied, we close the pull-request, or pull the contribution, if merged.
+
 ## Distinction between legal and moral obligation
 
 Previous discussions have revealed that there can be some confusion between
@@ -209,6 +216,9 @@ methods, such as the proposed affirmation above, will not be effective.  If we
 believe these will be effective, at least in part, then we will be less concerned
 that formal enforcement would be difficult.  We have still achieved our aim to
 reduce copyright abuse of open-source code.
+
+If we do detect AI in a contribution, we respond as above, by investigating
+and, if confirmed, pulling any merged code, or closing relevant pull-requests.
 
 ## Use-cases
 
