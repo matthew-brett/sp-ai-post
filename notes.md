@@ -133,9 +133,9 @@ applying license restrictions to the result.
   economy. It gives the total count of unique developers making at least one
   git push to a repository with a given license."
 
-  ### Table 1. GitHub contributors broken down by license type
+  ### Table 1. 2020 - 2024 GitHub contributors broken down by license type
 
-| License type  |  Percent contributions  |
+| License type  |  Percent contributors   |
 | ------------  |  ---------------------  |
 | Attribution   |  64.7                   |
 | Copyleft      |  18.7                   |
