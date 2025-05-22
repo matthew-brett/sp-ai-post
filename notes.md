@@ -198,7 +198,7 @@ offending code at some later date.
 
 Understandably enough, Microsoft concentrates on the problem of legal liability in its Copilot Copyright Commitment.[^microsoft-legal]
 
-[^nicrosoft-legal]: Microsoft partially indemnifies some of its customers
+[^microsoft-legal]: Microsoft partially indemnifies some of its customers
   against copyright infringement with AI - for example [see this
   announcement](https://blogs.microsoft.com/on-the-issues/2023/09/07/copilot-copyright-commitment-ai-legal-concerns)
 
