@@ -192,13 +192,16 @@ Understandably enough, Microsoft concentrates on the problem of legal liability 
 During the discussion at the developer summit, we established that:
 
 * The developers in the meeting were very experienced, and were themselves
-  making little use of AI.
-* There was some range of views on the use of AI, but:
+  making little use of AI, although most people in the room had tried using it
+  to various degrees.
+* There was some range of views on the use of AI for open-source code
+  contributions, but:
 * All participants in the discussion agreed that unrestricted use of AI for
-  open-source contribution was not desirable, because of the copyright concerns we've summarized here.
-* There was some range of views expressed as to whether more limited use of AI
-  could be acceptable from the point of view of copyright.  See below for
-  discussion of some edge-cases.
+  open-source contribution was not desirable, because of the copyright concerns
+  we've summarized here.
+* There were some friendly differences of opinion as to whether more limited
+  use of AI could be acceptable from the point of view of copyright.  See below
+  for discussion of some edge-cases.
 
 ## A proposed response
 
