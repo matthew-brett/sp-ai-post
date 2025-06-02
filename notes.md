@@ -11,6 +11,12 @@ participants.  See [the AI policy
 issue](https://github.com/scientific-python/summit-2025/issues/35) for some
 summaries and debate after the discussion.
 
+## Terms
+
+When we refer to AI in this document, we mean large language models trained on
+datasets of code with licenses requiring attribution, such as such as Github
+Copilot, Cursor, ChatGPT and Claude.
+
 ## A straightforward case
 
 Let us say that we write a code file — call this `our_code.py` — to which
