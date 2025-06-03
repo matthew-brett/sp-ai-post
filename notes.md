@@ -13,9 +13,11 @@ summaries and debate after the discussion.
 
 ## Terms
 
-When we refer to AI in this document, we mean large language models trained on
+When we refer to AI in this document, we specifically mean large language models (LLMs) trained on
 datasets of code with licenses requiring attribution, such as such as Github
-Copilot, Cursor, ChatGPT and Claude.
+Copilot, Cursor, ChatGPT and Claude.  We use the general term "AI" for these copyright-corpus code LLMs because these are, in practice, what coders mean when they refer to AI for code. [^code-llms]
+
+[^code-llms]:  Of course one could use "AI" in a more technical sense to mean code LLMs however trained.   Although this has the advantage of being technically correct, we thought this distinction between code LLMs (the technology) and code LLMs as they are used in practice would distract from the flow of text.
 
 ## A straightforward case
 
