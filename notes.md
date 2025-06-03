@@ -13,12 +13,11 @@ summaries and debate after the discussion.
 
 ## Terms
 
-We refer below to Copyright Corpus Code Large Language Models (CCC LLMs). CCC
-LLMs are the technology behind "AI for coding" from products such as Github
-Copilot, Cursor, ChatGPT and Claude.  As we explain below, this class of
-products all appear to have been trained on a large body of copyrighted code.
-Our discussion here is about the copyright implications of CCC LLMs.  We are
-not talking about LLM technology in general.
+When we refer to AI in this document, we specifically mean large language models (LLMs) trained on
+datasets of code with licenses requiring attribution, such as such as Github
+Copilot, Cursor, ChatGPT and Claude.  We use the general term "AI" for these copyright-corpus code LLMs because these are, in practice, what coders mean when they refer to AI for code. [^code-llms]
+
+[^code-llms]:  Of course one could use "AI" in a more technical sense to mean code LLMs however trained.   Although this has the advantage of being technically correct, we thought this distinction between code LLMs (the technology) and code LLMs as they are used in practice would distract from the flow of text.
 
 ## A straightforward case
 
@@ -55,19 +54,18 @@ You claim copyright of the result.
 In these simple cases, we continue to assert that most open-source coders would
 see this as abuse of their copyright.
 
-The last situation is a simplification of the process by which CCC LLMs
-generate code, with one important difference.  In the simplified case above,
-the license-stripping software could tell you the set of licenses that could or
-should apply to the output.  In general, CCC LLM-generated code results from
+The last situation is a simplification of the process by which AI generates
+code, with one important difference.  In the simplified case above, the
+license-stripping software could tell you the set of licenses that could or
+should apply to the output.  In general, AI-generated code results from
 training on a massive body of code, with a huge number of different copyright
 holders. A small proportion of the training code allows for re-use without
-attribution (see below).  Therefore standard AI (CCC LLM output) does not, and
-cannot, tell you the copyright or license of the code from which the generated
-code is derived. This makes it impossible for you, the user of the CCC LLM, to
-honor the licenses and copyrights of the code from which the generated code
-derives.
+attribution (see below).  Therefore standard AI does not, and cannot, tell you
+the copyright or license of the code from which the generated code is derived.
+This makes it impossible for you, the user of AI code, to honor the licenses
+and copyrights of the code from which the generated code derives.
 
-## Upholding copyright before and after CCC LLMs
+## Upholding copyright before and after AI
 
 Copyright has long been a concern in open-source coding.  One common problem is
 avoiding the use of code with [Copyleft
@@ -81,15 +79,15 @@ do read the GPL code, it will be very difficult to avoid the unconscious use of
 the GPL implementation.  The BSD author must therefore keep themselves clean of
 any possible influence of the code with an incompatible license.
 
-This "clean room" principle applies to the use of CCC LLM-generated code.  As
-we will see, standard AI (CCC LLM) models have "read" a huge body of code that
-requires attribution.  Most commercial models (see below) are likely to have
-"read" Copyleft code, that imposes stricter requirements.  It is therefore not
+This "clean room" principle applies to the use of AI-generated code.  As we
+will see, standard AI models have "read" a huge body of code that requires
+attribution.  Most commercial models (see below) are likely to have "read"
+Copyleft code, that imposes stricter requirements.  It is therefore not
 possible to assert with any certainty that the generated code does not contain
 similar or identical code fragments to which the original author's license will
 apply.
 
-## Copyright in CCC LLM training sets
+## Copyright in AI training sets
 
 Tools like Github Copilot, [Cursor](https://www.cursor.com) and
 [StarCoder](https://huggingface.co/blog/starcoder) use Large Language Models
@@ -104,7 +102,7 @@ source](https://copilot.github.trust.page/faq#ip-and-open-source).
 
 Starcoder is a set of models trained on data described at
 [BigCode](https://www.bigcode-project.org).  BigCode is a research project to
-develop a CCC LLM that a) uses code with an identified and "permissive"
+develop a code LLM that a) uses code with an identified and "permissive"
 license (such as MIT) and b) is itself developed with open code.  See the
 [BigCode dataset card](
 https://huggingface.co/datasets/bigcode/the-stack#dataset-card-for-the-stack).
@@ -155,7 +153,7 @@ applying license restrictions to the result.
 | Public domain |   2.7                   |
 
 It is therefore reasonable to assert that very little of the training data for
-standard CCC LLMs is suitable for remixing without violating the terms of
+standard code LLMs is suitable for remixing without violating the terms of
 their respective licenses.
 
 See [Copilot's FAQ](https://github.com/features/copilot#faq) (under
@@ -172,7 +170,7 @@ still too high a risk of license breach.
 
 Previous discussions have revealed that there can be some confusion between
 legal liability and a proper desire to honor the original license of code that
-the CCC LLM uses for generation.
+the AI uses for generation.
 
 Put simply, this is the distinction between these two questions:
 
@@ -181,15 +179,15 @@ Put simply, this is the distinction between these two questions:
 * "Am I respecting the author's stated intentions for re-using this code?" (a
   moral or ethical question).
 
-It is unlikely that any one particular use of a CCC LLM will cause the original
-author to pursue a copyright claim.  This is true for straightforward license
-abuse, as it is for use of a CCC LLM.  The author may not detect the abuse,
-because they are not reading your code, or they may choose not to pursue the
-abuse, if they have more productive ways to spend their time.  Nevertheless,
-the abuse has occurred.  As we would not want our copyright abused, we should
-be careful to avoid abusing the copyright of others, even if this would be
-unlikely to cause us specific harm in terms of legal action, or the requirement
-to pull out the offending code at some later date.
+It is unlikely that any one particular use of AI will cause the original author
+to pursue a copyright claim.  This is true for straightforward license abuse,
+as it is for use of AI.  The author may not detect the abuse, because they are
+not reading your code, or they may choose not to pursue the abuse, if they have
+more productive ways to spend their time.  Nevertheless, the abuse has
+occurred.  As we would not want our copyright abused, we should be careful to
+avoid abusing the copyright of others, even if this would be unlikely to cause
+us specific harm in terms of legal action, or the requirement to pull out the
+offending code at some later date.
 
 Understandably enough, Microsoft concentrates on the problem of legal liability in its Copilot Copyright Commitment.[^microsoft-legal]
 
@@ -202,39 +200,39 @@ Understandably enough, Microsoft concentrates on the problem of legal liability 
 During the discussion at the developer summit, we established that:
 
 * The developers in the meeting were very experienced, and were themselves
-  making little use of CCC LLMs, although most people in the room had tried
-  using it to various degrees.
-* There was some range of views on the use of CCC LLMs for open-source code
+  making little use of AI, although most people in the room had tried using it
+  to various degrees.
+* There was some range of views on the use of AI for open-source code
   contributions, but:
-* All participants in the discussion agreed that unrestricted use of CCC LLMs
-  for open-source contribution was not desirable, because of the copyright
-  concerns we've summarized here.
+* All participants in the discussion agreed that unrestricted use of AI for
+  open-source contribution was not desirable, because of the copyright concerns
+  we've summarized here.
 * There were some friendly differences of opinion as to whether more limited
-  use of CCC LLMs could be acceptable from the point of view of copyright.  See
-  below for discussion of some edge-cases.
+  use of AI could be acceptable from the point of view of copyright.  See below
+  for discussion of some edge-cases.
 
 ## A proposed response
 
 This is the response that we (Paul and Matthew) propose, on the basis of the arguments in this page.
 
 As we would not allow code contributions that consist, in part, of code with
-unacknowledged copyright, we should not accept code generated by CCC LLMs.
+unacknowledged copyright, we should not accept code generated by AI.
 
 We suggest that projects note this on their contribution pages and on their
 pull-request templates, perhaps using something like:
 
-> Code generated by typical code "AI" from (for example) Github Copilot or
-Cursor, derives from code with a wide variety of copyright terms, but, because
-of the nature of the generation process, cannot tell you which of these terms
-might apply to the AI output.  Therefore, as we cannot accept copied code for
-which you do not hold copyright, without conforming to the authors' chosen
-license, we cannot accept AI-generated code. Please use the tick boxes below to
-confirm that you have turned off all AI code generation in your editor, before
-writing your contribution, and that you have not read any AI-generated code in
-the process of writing your submission.
+> Code generated by AI from (for example) Github Copilot or Cursor, derives
+from code with a wide variety of copyright terms, but, because of the nature of
+the generation process, cannot tell you which of these terms might apply to the
+AI output.  Therefore, as we cannot accept copied code for which you do not
+hold copyright, without conforming to the authors' chosen license, we cannot
+accept AI-generated code. Please use the tick boxes below to confirm that you
+have turned off all AI code generation in your editor, before writing your
+contribution, and that you have not read any AI-generated code in the process
+of writing your submission.
 
-If we do detect or suspect CCC LLM use in the submission, we do the same as we
-would if we suspected e.g. Copyleft code use in a project with an
+If we do detect or suspect AI use in the submission, we do the same as we would
+if we suspected e.g. Copyleft code use in a project with an
 attribution-license.  That is, we check with the contributor, and if we are not
 satisfied, we close the pull-request, or pull the contribution, if merged.
 
@@ -246,42 +244,41 @@ believe these will be effective, at least in part, then we will be less concerne
 that formal enforcement would be difficult.  We have still achieved our aim to
 reduce copyright abuse of open-source code.
 
-If we do detect CCC LLM output in a contribution, we respond as above, by
-investigating and, if confirmed, pulling any merged code, or closing relevant
-pull-requests.
+If we do detect AI in a contribution, we respond as above, by investigating
+and, if confirmed, pulling any merged code, or closing relevant pull-requests.
 
 ## Edge-cases
 
 There have been several interesting edge-cases proposed that help to delineate
-between acceptable and unacceptable uses of CCC LLMs.
+between acceptable and unacceptable uses of AI.
 
 One [from Matt
 Haberland](https://github.com/scientific-python/summit-2025/issues/35#issuecomment-2874656680)
-was using CCC LLMs to port code with a known license — say BSD — to another
-language — say from MATLAB to Python.  Can one then honor the original license
-by applying it to the port?
+was using AI to port code with a known license — say BSD — to another language
+— say from MATLAB to Python.  Can one then honor the original license by
+applying it to the port?
 
 We think the answer is no.  Applying the "clean room" principle above, we know
-that standard CCC LLMs have "read" a huge corpus of code with attribution or
-even Copyleft licenses.  In asking the CCC LLM to port the original MATLAB
-code, we cannot know the extent to which the CCC LLM has used other training
-code in the port. For example, perhaps there is also a GPL implementation of
-this algorithm in Python.  The CCC LLM porting process may use and incorporate
-part of the GPL code in the port.
+that standard code LLMs have "read" a huge corpus of code with attribution or
+even Copyleft licenses.  In asking the AI to port the original MATLAB code, we
+cannot know the extent to which the AI has used other training code in the port.
+For example, perhaps there is also a GPL implementation of this algorithm in
+Python.  The AI porting process may use and incorporate part of the GPL code in
+the port.
 
-Another typical use of CCC LLMs is to generate suggestions for possible code,
-and then use that as the basis for writing one's own version of the same code.
-From the "clean room" principle, this also runs the risk of license leak,
-because the contents of the CCC LLM suggestion has an unknowable set of applicable
-copyright. As with our example of not looking at GPL code while contributing to
-a project with a more permissive license, it is difficult for you to see
-whether your re-implementation has used ideas and code from the CCC LLM
-suggestion. We should also require our contributors to forgo this use (see the
-suggested wording above).
+Another typical use of AI is to generate suggestions for possible code, and then
+use that as the basis for writing one's own version of the same code.  From the
+"clean room" principle, this also runs the risk of license leak, because the
+contents of the AI suggestion has an unknowable set of applicable copyright.
+As with our example of not looking at GPL code while contributing to a project
+with a more permissive license, it is difficult for you to see whether your
+re-implementation has used ideas and code from the AI suggestion.  We should
+also require our contributors to forgo this use (see the suggested wording
+above).
 
-There are situations in which CCC LLMs may suggest changes, such as bug-fixes,
-that are so small as to be trivial (say, a few characters) and so obvious as to
-be the only practical change to achieve the desired result.  In this case it's
+There are situations in which AI may suggest changes, such as bug-fixes, that
+are so small as to be trivial (say, a few characters) and so obvious as to be
+the only practical change to achieve the desired result.  In this case it's
 difficult to imagine the generated code could reasonably be subject to
 a license from the training set, any more than the same bug-fix would be
 subject to the license of any original code with the same fix.
