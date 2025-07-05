@@ -171,7 +171,7 @@ used to train GitHub’s AI model.
 It's difficult to know what "match examples" means, but nevertheless, 1% is
 still too high a risk of license breach.
 
-As [recent preprint by Xu et al](https://arxiv.org/abs/2408.02487) did some
+A [recent preprint by Xu et al](https://arxiv.org/abs/2408.02487) did some
 specific analysis of "striking similarity" between AI generated code and code
 with known license restrictions.  Although they used stringent criteria to
 identify generated code that required attribution, they found standard models
