@@ -13,9 +13,11 @@ summaries and debate after the discussion.
 
 ## Terms
 
-When we refer to AI in this document, we specifically mean large language models (LLMs) trained on
-datasets of code with licenses requiring attribution, such as such as Github
-Copilot, Cursor, ChatGPT and Claude.  We use the general term "AI" for these copyright-corpus code LLMs because these are, in practice, what coders mean when they refer to AI for code. [^code-llms]
+When we refer to AI in this document, we specifically mean large language
+models (LLMs) trained on datasets of code with licenses requiring attribution,
+such as such as Github Copilot, Cursor, ChatGPT and Claude.  We use the
+general term "AI" for these copyright-corpus code LLMs because these are, in
+practice, what coders mean when they refer to AI for code. [^code-llms]
 
 [^code-llms]:  Of course one could use "AI" in a more technical sense to mean code LLMs however trained.   Although this has the advantage of being technically correct, we thought this distinction between code LLMs (the technology) and code LLMs as they are used in practice would distract from the flow of text.
 
@@ -32,11 +34,11 @@ Now let us say that you take `our_code.py`, copy it into your own project, and
 claim this as your copyright.
 
 This would be a straightforward breach of copyright.  If we were so inclined,
-we might take legal action, but even if we were not so inclined, you have abused
-our generosity in your act of removing our copyright and claiming our work as
-your own.  We suspect that all open-source coders would accept that this was
-wrong, and that we should do all we reasonably could to make sure we are not
-doing that ourselves.
+we might take legal action, but even if we were not so inclined, you have
+abused our generosity in your act of removing our copyright and claiming our
+work as your own.  We suspect that all open-source coders would accept that
+this was wrong, and that we should do all we reasonably could to make sure we
+are not doing that ourselves.
 
 The situation does not change in any important way if you find and use some
 software to remove our license before claiming your own copyright.
@@ -55,15 +57,18 @@ In these simple cases, we continue to assert that most open-source coders would
 see this as abuse of their copyright.
 
 The last situation is a simplification of the process by which AI generates
-code, with one important difference.  In the simplified case above, the
-license-stripping software could tell you the set of licenses that could or
-should apply to the output.  In general, AI-generated code results from
-training on a massive body of code, with a huge number of different copyright
-holders. A small proportion of the training code allows for re-use without
-attribution (see below).  Therefore standard AI does not, and cannot, tell you
-the copyright or license of the code from which the generated code is derived.
-This makes it impossible for you, the user of AI code, to honor the licenses
-and copyrights of the code from which the generated code derives.
+code, with one difference of degree.  In the simplified case above, because we
+have used a small number of input files, the license-stripping software could
+tell you precisely the set of licenses that could or should apply to the
+output.  In general, AI-generated code results from training on a massive body
+of code, with a huge number of different copyright holders. A small proportion
+of the training code allows for re-use without attribution (see below).  For
+the remaining majority of the training code, the original license may apply.
+Some code AI systems attempt to tell you when the generated code is
+substantially similar to copyrighted input code, but in general, because of
+nature of LLM training, this is a hard problem. This makes it very difficult
+for you, the user of AI code, to honor the licenses and copyrights of the code
+from which the generated code derives.
 
 ## Upholding copyright before and after AI
 
@@ -165,6 +170,18 @@ used to train GitHub’s AI model.
 
 It's difficult to know what "match examples" means, but nevertheless, 1% is
 still too high a risk of license breach.
+
+A [recent preprint by Xu et al](https://arxiv.org/abs/2408.02487) did some
+specific analysis of "striking similarity" between AI generated code and code
+with known license restrictions.  Although they used stringent criteria to
+identify generated code that required attribution, they found standard models
+such as GPT-4o, Gemini 1.5 Pro and Claude 3.5 Sonnet gave (respectively) 1.1%,
+1.0% and 2.0% of samples where code met their criteria.  The AI identified
+correct license attribution in (respectively) 74%, 59% and 69% of these
+samples.  They also found evidence that the AIs were systematically less
+likely to correctly identify Copyleft licenses, and speculate that "some
+closed-source LLMs may have implemented post-processing steps to avoid
+acknowledging outputs derived from copyleft-licensed code snippets."
 
 ## Distinction between legal and moral obligation
 
